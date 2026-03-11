@@ -1,0 +1,25 @@
+<html>
+
+<body>
+
+<h2>Medical AI Assistant</h2>
+
+<form method="post">
+
+<input type="text" name="question" placeholder="Enter symptoms">
+
+<button type="submit">Ask</button>
+
+</form>
+
+{% if answer %}
+
+<h3>AI Response:</h3>
+
+<p>{{answer}}</p>
+
+{% endif %}
+
+</body>
+
+</html>

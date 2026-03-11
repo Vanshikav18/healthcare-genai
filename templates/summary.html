@@ -1,0 +1,35 @@
+<html>
+
+<body>
+
+<h2>Patient Summary Generator</h2>
+
+<form method="post">
+
+<input type="text" name="name" placeholder="Patient Name">
+
+<br><br>
+
+<input type="number" name="age" placeholder="Age">
+
+<br><br>
+
+<textarea name="symptoms" placeholder="Enter symptoms"></textarea>
+
+<br><br>
+
+<button type="submit">Generate Summary</button>
+
+</form>
+
+{% if result %}
+
+<h3>Generated Summary</h3>
+
+<p>{{result}}</p>
+
+{% endif %}
+
+</body>
+
+</html>
