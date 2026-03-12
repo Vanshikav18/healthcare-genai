@@ -1,34 +1,60 @@
+<!DOCTYPE html>
 <html>
+
+<head>
+
+<title>Patient Summary Generator</title>
+
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
+</head>
 
 <body>
 
-<h2>Patient Summary Generator</h2>
+<div class="main-card">
 
-<form method="post">
+<h1>Patient Summary Generator</h1>
 
-<input type="text" name="name" placeholder="Patient Name">
+<form method="post" class="summary-form">
 
-<br><br>
+<input type="text" name="name" placeholder="Patient Name" required>
 
-<input type="number" name="age" placeholder="Age">
-
-<br><br>
+<input type="number" name="age" placeholder="Age" required>
 
 <textarea name="symptoms" placeholder="Enter symptoms"></textarea>
 
-<br><br>
-
-<button type="submit">Generate Summary</button>
+<button type="submit">Generate</button>
 
 </form>
 
 {% if result %}
 
-<h3>Generated Summary</h3>
+<div class="summary-result">
 
-<p>{{result}}</p>
+<h2>Generated Summary</h2>
+
+<h3>Patient Summary</h3>
+
+<p><strong>Name:</strong> {{result.name}}</p>
+
+<p><strong>Age:</strong> {{result.age}}</p>
+
+<p><strong>Symptoms:</strong></p>
+<p>{{result.symptoms}}</p>
+
+<p><strong>Observation:</strong></p>
+<p>{{result.observation}}</p>
+
+<p><strong>Advice:</strong></p>
+<p>{{result.advice}}</p>
+
+</div>
 
 {% endif %}
+
+<a class="back-btn" href="/">⬅ Back</a>
+
+</div>
 
 </body>
 

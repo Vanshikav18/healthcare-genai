@@ -2,19 +2,128 @@
 <html>
 
 <head>
-<title>Healthcare GenAI</title>
-<link rel="stylesheet" href="/static/style.css">
+
+<title>Healthcare AI Assistant</title>
+
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
+<style>
+
+/* HOME PAGE STYLE */
+
+.home-wrapper{
+
+text-align:center;
+margin-top:80px;
+
+}
+
+.home-title{
+
+color:#b71c1c;
+font-size:40px;
+margin-bottom:10px;
+
+}
+
+.home-subtitle{
+
+color:#555;
+margin-bottom:40px;
+
+}
+
+.card-container{
+
+display:flex;
+justify-content:center;
+gap:40px;
+
+}
+
+.home-card{
+
+width:250px;
+background:white;
+
+padding:30px;
+
+border-radius:12px;
+
+box-shadow:0 8px 20px rgba(0,0,0,0.15);
+
+text-decoration:none;
+
+color:black;
+
+border-top:6px solid #c62828;
+
+transition:0.3s;
+
+}
+
+.home-card:hover{
+
+transform:translateY(-5px);
+
+box-shadow:0 12px 25px rgba(0,0,0,0.2);
+
+}
+
+.home-card h2{
+
+color:#c62828;
+margin-bottom:10px;
+
+}
+
+.home-card p{
+
+font-size:14px;
+color:#444;
+
+}
+
+</style>
+
 </head>
 
 <body>
 
-<h1>Healthcare GenAI System</h1>
+<div class="home-wrapper">
 
-<a href="/chat">Ask Medical Question</a>
+<h1 class="home-title">Healthcare AI Assistant</h1>
 
-<br><br>
+<p class="home-subtitle">
+AI powered medical assistant for quick healthcare guidance
+</p>
 
-<a href="/summary">Generate Patient Summary</a>
+<div class="card-container">
+
+<a href="/chat" class="home-card">
+
+<h2>💬 AI Chatbot</h2>
+
+<p>
+Ask symptoms and get medical guidance instantly.
+</p>
+
+</a>
+
+<a href="/summary" class="home-card">
+
+<h2>📋 Patient Summary</h2>
+
+<p>
+Generate structured medical summary for patients.
+</p>
+
+</a>
+
+</div>
+
+</div>
 
 </body>
+
 </html>

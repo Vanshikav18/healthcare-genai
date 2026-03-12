@@ -9,19 +9,12 @@ collection = client.get_or_create_collection("medical_data")
 
 documents = [
 
-"Diabetes is a chronic condition that causes high blood sugar levels.",
-
-"Hypertension means high blood pressure and may increase heart disease risk.",
-
 "Fever is commonly caused by infection in the body.",
-
-"Asthma affects breathing due to airway inflammation.",
-
-"Headache may occur due to stress, dehydration or lack of sleep.",
-
-"Common cold symptoms include sneezing, cough and mild fever.",
-
-"Stomach pain can occur due to indigestion or infection."
+"Headache can occur due to stress or dehydration.",
+"Cough may occur due to cold or throat infection.",
+"Diabetes is a condition that causes high blood sugar.",
+"Asthma affects breathing and airways.",
+"Cold symptoms include sneezing and mild fever."
 
 ]
 
@@ -42,7 +35,7 @@ def search_context(query):
 
     results = collection.query(
         query_embeddings=query_embedding,
-        n_results=2
+        n_results=1
     )
 
-    return results["documents"][0]
+    return results["documents"][0][0]

@@ -5,12 +5,12 @@ def generate_ai_response(user_input):
     context = search_context(user_input)
 
     response = f"""
-Based on medical knowledge:
+Medical Information:
 
 {context}
 
-This information is for educational purposes only.
-Please consult a healthcare professional for diagnosis.
+Note: This AI assistant provides general medical information only.
+Please consult a doctor for professional advice.
 """
 
     return response

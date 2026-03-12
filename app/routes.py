@@ -7,22 +7,21 @@ main = Blueprint("main", __name__)
 
 @main.route("/")
 def home():
-
     return render_template("index.html")
 
 
-@main.route("/chat", methods=["GET","POST"])
+@main.route("/chat", methods=["GET", "POST"])
 def chat():
 
     answer = None
+    question = None
 
     if request.method == "POST":
 
         question = request.form["question"]
-
         answer = generate_ai_response(question)
 
-    return render_template("chat.html", answer=answer)
+    return render_template("chat.html", question=question, answer=answer)
 
 
 @main.route("/summary", methods=["GET","POST"])

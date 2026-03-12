@@ -1,24 +1,56 @@
+<!DOCTYPE html>
 <html>
+
+<head>
+
+<title>Healthcare AI Chatbot</title>
+
+<link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
+</head>
 
 <body>
 
-<h2>Medical AI Assistant</h2>
+<div class="main-card">
 
-<form method="post">
+<h1>Healthcare AI Chatbot</h1>
 
-<input type="text" name="question" placeholder="Enter symptoms">
+<form method="post" class="chat-form">
 
-<button type="submit">Ask</button>
+<input type="text" name="question" placeholder="Enter your symptoms..." required>
+
+<button type="submit">Send</button>
 
 </form>
 
-{% if answer %}
+{% if question %}
 
-<h3>AI Response:</h3>
+<div class="chat-user">
+
+{{question}}
+
+</div>
+
+<div class="chat-bot">
+
+<p><strong>Medical Information:</strong></p>
 
 <p>{{answer}}</p>
 
+<p class="note">
+
+<strong>Note:</strong> This AI assistant provides general medical information only.  
+Please consult a doctor for professional advice.
+
+</p>
+
+</div>
+
 {% endif %}
+
+<a class="back-btn" href="/">⬅ Back</a>
+
+</div>
 
 </body>
 
